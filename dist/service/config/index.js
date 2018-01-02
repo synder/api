@@ -5,9 +5,9 @@
  * @desc
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-let ENV = "dev";
+let ENV = 'dev';
 if (process.env.NODE_ENV != null) {
-  ENV = process.env.NODE_ENV;
+    ENV = process.env.NODE_ENV;
 }
-const config = require("./" + ENV.toLowerCase());
+const config = require('./' + ENV.toLowerCase());
 exports.default = config;

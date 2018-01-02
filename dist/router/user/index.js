@@ -8,7 +8,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 const Router = require("koa-router");
 const account = require("../../controller/user/account");
 const userRouter = new Router({
-  prefix: "/user"
+    prefix: '/user',
 });
 exports.userRouter = userRouter;
-userRouter.get("/", account.home);
+userRouter.get('/', account.home);

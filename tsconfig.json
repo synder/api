@@ -5,13 +5,20 @@
     "sourceMap": false,
     "rootDir": "./src",
     "outDir": "./dist",
-    "watch": true,
+    "watch": false,
     "target": "es6",
-    "lib": ["es6"],
+    "lib": [
+      "es6"
+    ],
     "strict": true,
     "experimentalDecorators": true,
     "emitDecoratorMetadata": true
   },
-  "include": ["./src/**/*"],
-  "exclude": ["views", "static"]
+  "include": [
+    "./src/**/*"
+  ],
+  "exclude": [
+    "views",
+    "static"
+  ]
 }

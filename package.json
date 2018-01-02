@@ -3,14 +3,12 @@
   "version": "0.1.0",
   "description": "",
   "scripts": {
-    "dep": "bash ./depend.sh",
-    "test": "tslint -p . -c tslint.json 'src/**/*.ts' && NODE_ENV=dev jest",
-    "dev": "NODE_ENV=dev nodemon ./dist/bin/www.js",
+    "dev": "(tsc --watch &) && NODE_ENV=dev nodemon ./dist/bin/www.js",
     "pre": "NODE_ENV=pre pm2 ./dist/bin/www.js --name api",
     "pro": "NODE_ENV=pro pm2 start ./dist/bin/www.js --name api",
-    "build": "tsc &",
-    "format": "todo",
-    "precommit": "npm run test && lint-staged"
+    "test": "tslint -p . -c tslint.json 'src/**/*.ts' && NODE_ENV=dev jest",
+    "build": "tsc && npm run test",
+    "precommit": "npm run build"
   },
   "dependencies": {
     "koa": "^2.4.1",
@@ -41,7 +39,6 @@
     "@types/node": "^8.5.2",
     "@types/redis": "^2.8.4",
     "@types/request-promise": "^4.1.39",
-    "@types/superagent": "^3.5.6",
     "@types/supertest": "^2.0.4",
     "@types/uuid": "^3.4.3",
     "husky": "^0.14.3",
@@ -52,12 +49,6 @@
     "tslint": "^5.8.0",
     "tslint-config-airbnb": "^5.4.2",
     "typescript": "^2.6.2"
-  },
-  "lint-staged": {
-    "*.{ts}": [
-      "prettier --write",
-      "git add"
-    ]
   },
   "author": "synder",
   "license": "ISC"

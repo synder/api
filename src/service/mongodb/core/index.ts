@@ -7,8 +7,6 @@
 import * as mongoose from 'mongoose'
 import config from '../../config'
 
-mongoose.Promise = global.Promise
-
 const CONFIG = config.mongodb.core
 
 if (!CONFIG) {
