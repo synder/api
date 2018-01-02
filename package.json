@@ -10,7 +10,7 @@
     "pro": "NODE_ENV=pro pm2 start ./dist/bin/www.js --name api",
     "build": "tsc &",
     "format": "todo",
-    "precommit": "lint-staged"
+    "precommit": "npm run test && lint-staged"
   },
   "dependencies": {
     "koa": "^2.4.1",

@@ -18,3 +18,4 @@ import { userRouter } from './router/user'
 app.use(userRouter.routes())
 
 export { app }
+
